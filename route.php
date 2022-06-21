@@ -1,5 +1,7 @@
 <?php
-require_once("matematica.php");
+require_once "libs/matematica.php";
+require_once('libs/mostrarPaginas.php');
+
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
@@ -8,23 +10,22 @@ if (!empty($_GET['action'])) {
 }
 $params = explode('/', $action);
 
+
 switch ($params[0]) {
-    case 'home':
-        $controlador->Home();
-        break;
-    case 'suma':
-        $controlador->suma();
-        break;
-    case 'resta':
-        $controlador->resta();
-        break;
-    case 'multiplicacion':
-        $controlador->multiplicacion();
-        break;
-    case 'division':
-        $controlador->division();
-        break;
-    default:
-        echo ('404 Page not found');
-        break;
+    case 'home': home(); break;
+    case 'acerca': acerca(); break;
+    case 'pi': mostrarPi(); break;
+    case 'suma': {
+        $a = $parametros[1];
+        $b = $parametros[2];
+        $resultado = sumar($a, $b);
+        echo($resultado);
+    }break;
+    case 'resta': {
+        $a = $parametros[1];
+        $b = $parametros[2];
+        $resultado = restar($a, $b);
+        echo($resultado);
+    }break;
+    default: echo ('Ud. eligio '.$action); break;
 };
