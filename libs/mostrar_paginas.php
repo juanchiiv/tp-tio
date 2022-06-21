@@ -35,6 +35,7 @@ function home() {
     <html>'.mostrarHeader().'
     <body>
         <div class="container">
+        <img src="imagenes\matematica_fondo.jpg"/>
             '.mostrarNav().'
             <form action="" method="GET" id="formulario">
     
