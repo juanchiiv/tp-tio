@@ -1,5 +1,5 @@
 <?php
-require_once "matematica.php";
+require_once "libs/matematica.php";
 
 function mostrarHeader() {
     $contenido = '<head>
