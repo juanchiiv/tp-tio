@@ -1,5 +1,5 @@
 <?php
- require_once "matematica.php";
+ require_once "libs/matematica.php";
 
  /**
  * Por el arreglo $_GET, llegan estos valores:

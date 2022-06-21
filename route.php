@@ -1,9 +1,10 @@
 <?php
-require_once "libs/matematica.php";
-require_once('libs/mostrarPaginas.php');
+require_once ('libs/matematica.php');
+require_once('libs/mostrar_paginas.php');
 require_once('libs/calculadora.php');
 
 define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
+
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 } else {
@@ -30,3 +31,4 @@ switch ($params[0]) {
     }break;
     default: echo ('Ud. eligio '.$action); break;
 };
+?>
